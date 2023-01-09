@@ -63,7 +63,7 @@ while True:
             # 뒤로가기
             driver.back()
         except:
-            with open(f"error.html", "w", encoding='UTF-8') as f:
+            with open("error.html", "w", encoding='UTF-8') as f:
                 f.write(driver.page_source)
             time.sleep(10)
             driver.get(f'https://franchise.ftc.go.kr/mnu/00013/program/userRqst/list.do?searchCondition=&searchKeyword=&column=brd&selUpjong=21&selIndus=&pageUnit=10&pageIndex={pageIndex}')
