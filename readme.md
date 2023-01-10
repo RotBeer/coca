@@ -9,4 +9,5 @@
    - BeautifulSoup 정보 추출
  - [st/](st/)
    - Streamlit 대시보드
+   - 접속주소 : http://rotbeer-st.duckdns.org/
  - 폴더 내부에 readme.md작성
