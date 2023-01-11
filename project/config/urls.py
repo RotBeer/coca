@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from coca.views import root
+from coca import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('coca/', include('coca.urls')),
-    path('', root),
+    path('common/', include('common.urls')),
+    path('', views.index, name='index'),
 ]
