@@ -16,4 +16,11 @@
 
  ## 해결한 문제 
  Streamlit은 웹소켓을 사용하는데, Nginx에서 웹소켓을 사용하려면 추가작업을 해야함 
- - 참고자료: https://www.nginx.com/blog/websocket-nginx/
+ - 참고자료: https://www.nginx.com/blog/websocket-nginx/ 
+ ```
+# 서버에 이 부분을 추가해 준다
+proxy_http_version 1.1;
+proxy_set_header Upgrade $http_upgrade;
+proxy_set_header Connection "Upgrade";
+proxy_set_header Host $http_host;
+```
