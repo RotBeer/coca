@@ -22,4 +22,5 @@ urlpatterns = [
     path('coca/', include('coca.urls')),
     path('common/', include('common.urls')),
     path('', views.index, name='index'),
+    path('accounts/', include('allauth.urls')),
 ]

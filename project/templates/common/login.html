@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
+{% load socialaccount %}
+{% providers_media_js %}
 <div class="container my-3">
     <form method="post" action="{% url 'common:login' %}">
         {% csrf_token %}
@@ -7,14 +9,23 @@
         <div class="mb-3">
             <label for="username">사용자ID</label>
             <input type="text" class="form-control" name="username" id="username"
-                   value="{{ form.username.value|default_if_none:'' }}">
+            value="{{ form.username.value|default_if_none:'' }}">
         </div>
         <div class="mb-3">
             <label for="password">비밀번호</label>
             <input type="password" class="form-control" name="password" id="password"
-                   value="{{ form.password.value|default_if_none:'' }}">
+            value="{{ form.password.value|default_if_none:'' }}">
         </div>
         <button type="submit" class="btn btn-primary">로그인</button>
-    </form>
+    </form>    
+    <a class="my-3" href="{% provider_login_url 'naver' %}">
+        <img src="https://i.postimg.cc/zvKQ7c9Z/btnG.png" width="200px">
+    </a>
+    <a class="my-3" href="{% provider_login_url 'kakao' %}">
+        <img src="https://i.postimg.cc/NMZ8LJKS/kakao-login-large-narrow.png" width="200px">
+    </a>
+    <a class="my-3" href="{% provider_login_url 'github' %}">
+        <img src="https://coderwall-assets-0.s3.amazonaws.com/uploads/picture/file/4363/github.png" width="200px">
+    </a>
 </div>
 {% endblock %}
